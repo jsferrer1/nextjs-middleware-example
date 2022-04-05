@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 export function middleware(req) {
     const basicAuth = req.headers.get('authorization')
-
+    console.log('hello middleware')
     if (basicAuth) {
         const auth = basicAuth.split(' ')[1]
         const [user, pwd] = Buffer.from(auth, 'base64').toString().split(':')
